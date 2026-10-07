@@ -1,12 +1,14 @@
 # 보류·미실행 항목 체크리스트 (2026-10-07 기준)
 
+저장소: https://github.com/gudwn9352-alt/igdm-digest (main)
+
 끝낸 항목은 `[x]` 로 바꾸세요. 이 파일은 Claude 와의 작업에서 "아직 안 한 것" 을 잊지 않기 위한 메모입니다.
 
 ## 사용자가 해야 하는 것
 
-- [ ] **새 GitHub 저장소 만들기**: https://github.com/new 에서 `igdm-digest`, 비공개(Private), README 추가 끄기
-- [ ] **Claude GitHub 앱에 새 저장소 접근 권한 주기**: https://github.com/apps/claude/installations/select_target
-- [ ] 위 두 가지가 끝나면 Claude 에게 "만들었어" 라고 알리기 → Claude 가 `main` 으로 푸시
+- [x] **새 GitHub 저장소 만들기**: https://github.com/new 에서 `igdm-digest`, 비공개(Private), README 추가 끄기
+- [x] **Claude GitHub 앱에 새 저장소 접근 권한 주기**: https://github.com/apps/claude/installations/select_target
+- [x] 위 두 가지가 끝나면 Claude 에게 "만들었어" 라고 알리기 → Claude 가 `main` 으로 푸시
 - [ ] (선택) 기존 `-_-` 저장소의 `claude/clever-pascal-v7n4ct` 브랜치 삭제 여부 결정
 - [ ] `config.example.yaml` → `config.yaml` 복사 후 사업 프로필, Gmail 주소, `instagram.my_name` 채우기
 - [ ] Claude API 키 발급 → 환경변수 `ANTHROPIC_API_KEY`
@@ -25,6 +27,6 @@
 
 ## Claude 가 이어서 할 것 (사용자 신호 대기)
 
-- [ ] 저장소 생성 확인 후 `igdm-digest` 푸시
+- [x] 저장소 생성 확인 후 `igdm-digest` 푸시
 - [ ] 요청 시 펜션 리드 조사·제안 메일 초안 작성
 - [ ] 첫 실행 오류 수정
