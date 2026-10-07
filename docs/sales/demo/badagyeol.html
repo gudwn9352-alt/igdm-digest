@@ -1,0 +1,296 @@
+<title>바다결 펜션</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style>
+/* 레이아웃: 모바일 1열 우선. 상단 데모 띠 → 히어로(바다 사진) → 바로 연락 바 → 객실 → 시설·주변 → 오시는 길 → 예약 안내 → 후기 → 사업자 정보. 하단 고정 바(전화·예약) */
+:root {
+  --bg: #f7f5f0;          /* 모래색 바탕 */
+  --fg: #1f2a33;          /* 짙은 남색 글자 */
+  --muted: #5d6b76;
+  --line: #d9d4c9;
+  --card: #ffffff;
+  --sea: #1b5e7a;         /* 동해 바다색, 강조색 */
+  --sea-ink: #ffffff;
+  --sun: #d98f3a;         /* 노을색, 보조 강조 */
+  --soft: #e8eef1;
+  --display: 'Hahmlet', 'Noto Serif KR', serif;
+  --body: 'IBM Plex Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101820; --fg: #eef2f4; --muted: #a6b3bc; --line: #2a3843; --card: #182430;
+    --sea: #5fb3d3; --sea-ink: #07212c; --sun: #e8a85a; --soft: #1e2c38; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101820; --fg: #eef2f4; --muted: #a6b3bc; --line: #2a3843; --card: #182430;
+  --sea: #5fb3d3; --sea-ink: #07212c; --sun: #e8a85a; --soft: #1e2c38; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.6; margin: 0; padding-block: 0 88px; }
+.wrap { max-width: 720px; margin: 0 auto; padding-inline: 16px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.25; }
+h2 { font-size: 1.5rem; margin-bottom: 14px; }
+h3 { font-size: 1.1rem; }
+p { margin: 0; }
+a { color: var(--sea); }
+.eyebrow { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.demo-band { background: var(--soft); color: var(--muted); font-size: .8rem; text-align: center; padding: 6px 16px; }
+.hero { position: relative; min-height: 420px; display: grid; align-items: end; color: #fff; isolation: isolate; }
+.hero .photo { position: absolute; inset: 0; z-index: -1; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(5,20,30,.78) 100%); }
+.hero .wrap { padding-block: 28px; width: 100%; }
+.hero h1 { font-size: clamp(2rem, 7vw, 3rem); font-weight: 700; }
+.hero .tag { font-size: 1.05rem; margin-top: 8px; opacity: .95; }
+.hero .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.chip { background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 4px 12px; font-size: .85rem; backdrop-filter: blur(4px); }
+.contact { background: var(--card); border-block: 1px solid var(--line); }
+.contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding-block: 14px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--fg); font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+.btn.primary { background: var(--sea); color: var(--sea-ink); border-color: var(--sea); }
+.btn:focus-visible { outline: 3px solid var(--sun); outline-offset: 2px; }
+.phone { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.phone .num { font-family: var(--display); font-size: 1.35rem; font-weight: 700; letter-spacing: .02em; font-variant-numeric: tabular-nums; user-select: all; }
+.phone small { color: var(--muted); display: block; font-size: .8rem; }
+section.block { padding-block: 36px; }
+section.block + section.block { border-top: 1px solid var(--line); }
+.rooms { display: grid; gap: 16px; }
+.room { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: grid; }
+.room .photo { aspect-ratio: 16 / 10; max-width: 100%; background: linear-gradient(135deg, #d7e6ec, #9fc1cf); background-size: cover; background-position: center; }
+.room .body { padding: 14px 16px 16px; display: grid; gap: 8px; }
+.room .meta { color: var(--muted); font-size: .9rem; }
+.price { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; font-variant-numeric: tabular-nums; font-size: .9rem; }
+.price div { background: var(--soft); border-radius: 8px; padding: 8px; text-align: center; }
+.price b { display: block; font-size: 1.05rem; }
+.price span { color: var(--muted); font-size: .75rem; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fact { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; min-width: 0; }
+.fact b { display: block; margin-bottom: 2px; }
+.fact span { color: var(--muted); font-size: .9rem; }
+.list { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.list li { display: flex; gap: 12px; align-items: baseline; }
+.list .dist { flex: 0 0 auto; font-variant-numeric: tabular-nums; color: var(--sea); font-weight: 600; min-width: 4.5em; }
+.photo-wide { aspect-ratio: 16 / 9; max-width: 100%; border-radius: 14px; background: linear-gradient(160deg, #f3c58a, #d98f3a 45%, #4b2f5e); background-size: cover; background-position: center; margin-top: 14px; }
+.addr { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: grid; gap: 8px; }
+.addr .line { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: center; }
+.addr .text { user-select: all; }
+.rules { display: grid; gap: 8px; }
+.rules div { display: grid; grid-template-columns: 6.5em 1fr; gap: 10px; }
+.rules dt { color: var(--muted); font-weight: 500; }
+.rules dd { margin: 0; }
+.reviews { display: grid; gap: 12px; }
+.review { background: var(--card); border-left: 3px solid var(--sea); padding: 12px 14px; border-radius: 0 10px 10px 0; }
+.review .who { color: var(--muted); font-size: .85rem; margin-top: 6px; }
+footer { color: var(--muted); font-size: .8rem; padding-block: 24px 12px; line-height: 1.7; }
+.bar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--card); border-top: 1px solid var(--line); padding: 10px 16px; padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)); display: grid; grid-template-columns: 1fr 1fr; gap: 10px; z-index: 5; }
+.toast { position: fixed; left: 50%; bottom: 96px; transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 999px; font-size: .9rem; opacity: 0; transition: opacity .25s; pointer-events: none; }
+.toast.show { opacity: 1; }
+
+.hero-bg { background: radial-gradient(circle at 78% 38%, rgba(255,241,214,.95) 0, rgba(255,241,214,.9) 42px, rgba(255,241,214,0) 44px), linear-gradient(180deg, #f6d3ad 0%, #e9a071 34%, #8fbdd4 52%, #2a7391 68%, #103f52 100%); overflow: hidden; }
+.hero-bg.has-photo { background-size: cover; background-position: center; }
+.hero-bg .waves { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 120px; display: block; }
+.hero-bg.has-photo .waves { display: none; }
+.photo-room.has-photo span, .photo-wide.has-photo span { display: none; }
+.photo-room, .photo-wide { display: grid; place-items: center; color: rgba(255,255,255,.9); font-size: .8rem; letter-spacing: .04em; }
+.photo-room span, .photo-wide span { background: rgba(0,0,0,.28); padding: 4px 10px; border-radius: 999px; }
+@media (min-width: 640px) { .rooms { grid-template-columns: repeat(3, 1fr); } .room .photo { aspect-ratio: 4 / 3; } }
+@media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
+</style>
+
+<div class="demo-band">제작 예시 페이지입니다. "바다결 펜션"은 가상의 업체이고, 실제 제작 시에는 업체의 사진과 정보가 들어갑니다.</div>
+
+<header class="hero">
+  <div class="photo hero-bg" data-photo="hero">
+    <svg class="waves" viewBox="0 0 800 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 40 C 120 10, 200 70, 320 40 S 520 10, 640 40 S 760 70, 800 40 V120 H0 Z" fill="rgba(255,255,255,.10)"/>
+      <path d="M0 70 C 140 40, 220 100, 340 70 S 540 40, 660 70 S 780 100, 800 70 V120 H0 Z" fill="rgba(255,255,255,.12)"/>
+      <path d="M0 98 C 160 70, 240 125, 360 98 S 560 70, 680 98 S 790 125, 800 98 V120 H0 Z" fill="rgba(255,255,255,.16)"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <p class="eyebrow" style="color:#e8eef1">강원 양양 · 죽도해변</p>
+    <h1>바다결 펜션</h1>
+    <p class="tag">죽도해변까지 걸어서 3분, 전 객실에서 동해가 보입니다.</p>
+    <div class="chips">
+      <span class="chip">전 객실 오션뷰</span>
+      <span class="chip">개별 바비큐 테라스</span>
+      <span class="chip">서핑 스쿨 도보 5분</span>
+      <span class="chip">무료 주차</span>
+    </div>
+  </div>
+</header>
+
+<div class="contact">
+  <div class="wrap">
+    <div class="phone">
+      <div>
+        <span class="num" id="phone-number">033-000-0000</span>
+        <small>전화 예약 · 매일 09:00~21:00 (가상의 번호)</small>
+      </div>
+      <button class="btn" type="button" id="copy-phone">번호 복사</button>
+    </div>
+    <a class="btn primary" href="https://booking.naver.com/" target="_blank" rel="noopener">네이버 예약</a>
+    <a class="btn" href="https://pf.kakao.com/" target="_blank" rel="noopener">카카오톡 문의</a>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="block" id="rooms">
+    <p class="eyebrow">객실</p>
+    <h2>세 가지 객실, 모두 바다를 향해 있습니다</h2>
+    <div class="rooms">
+      <article class="room">
+        <div class="photo photo-room" data-photo="room1" role="img" aria-label="객실 사진 자리"><span>객실 사진이 들어갑니다</span></div>
+        <div class="body">
+          <h3>파도 (2층 오션뷰)</h3>
+          <p class="meta">기준 2인 · 최대 4인 · 침대 1 + 온돌 · 33㎡</p>
+          <div class="price">
+            <div><span>비수기 주중</span><b>120,000원</b></div>
+            <div><span>비수기 주말</span><b>160,000원</b></div>
+            <div><span>성수기</span><b>220,000원</b></div>
+          </div>
+        </div>
+      </article>
+      <article class="room">
+        <div class="photo photo-room" data-photo="room2" role="img" aria-label="객실 사진 자리"><span>객실 사진이 들어갑니다</span></div>
+        <div class="body">
+          <h3>모래 (1층 테라스)</h3>
+          <p class="meta">기준 2인 · 최대 3인 · 침대 1 · 26㎡ · 반려견 동반 가능</p>
+          <div class="price">
+            <div><span>비수기 주중</span><b>100,000원</b></div>
+            <div><span>비수기 주말</span><b>140,000원</b></div>
+            <div><span>성수기</span><b>190,000원</b></div>
+          </div>
+        </div>
+      </article>
+      <article class="room">
+        <div class="photo photo-room" data-photo="room3" role="img" aria-label="객실 사진 자리"><span>객실 사진이 들어갑니다</span></div>
+        <div class="body">
+          <h3>노을 (복층 패밀리)</h3>
+          <p class="meta">기준 4인 · 최대 6인 · 침대 2 + 온돌 · 52㎡</p>
+          <div class="price">
+            <div><span>비수기 주중</span><b>180,000원</b></div>
+            <div><span>비수기 주말</span><b>240,000원</b></div>
+            <div><span>성수기</span><b>320,000원</b></div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="meta" style="color:var(--muted);font-size:.85rem;margin-top:12px">인원 추가 1인 20,000원 (만 24개월 미만 무료). 성수기는 7월 15일부터 8월 20일까지입니다. 가격은 예시입니다.</p>
+  </section>
+
+  <section class="block" id="facilities">
+    <p class="eyebrow">시설과 주변</p>
+    <h2>저녁엔 테라스에서 바비큐, 아침엔 서핑</h2>
+    <div class="grid2">
+      <div class="fact"><b>개별 바비큐</b><span>객실마다 테라스 그릴. 숯·그릴 세트 20,000원</span></div>
+      <div class="fact"><b>야외 수영장</b><span>6~9월 운영, 10:00~19:00</span></div>
+      <div class="fact"><b>반려견 동반</b><span>모래 객실 한정, 10kg 이하 1마리</span></div>
+      <div class="fact"><b>조식</b><span>토스트·커피 셀프바 08:00~10:00 무료</span></div>
+    </div>
+    <div class="photo-wide" data-photo="terrace" role="img" aria-label="테라스 노을 사진 자리"><span>테라스 노을 사진이 들어갑니다</span></div>
+    <ul class="list" style="margin-top:16px">
+      <li><span class="dist">도보 3분</span><span>죽도해변, 서핑 스쿨 밀집 구역</span></li>
+      <li><span class="dist">차량 7분</span><span>하조대 전망대와 등대</span></li>
+      <li><span class="dist">차량 12분</span><span>낙산사, 낙산해수욕장</span></li>
+      <li><span class="dist">차량 15분</span><span>양양 전통시장 (4·9일 오일장)</span></li>
+    </ul>
+  </section>
+
+  <section class="block" id="map">
+    <p class="eyebrow">오시는 길</p>
+    <h2>양양 IC에서 15분</h2>
+    <div class="addr">
+      <div class="line">
+        <span class="text">강원특별자치도 양양군 현남면 죽도해변길 00 (가상의 주소)</span>
+        <button class="btn" type="button" id="copy-addr">주소 복사</button>
+      </div>
+      <div class="line">
+        <span style="color:var(--muted);font-size:.9rem">내비게이션에 "바다결 펜션" 또는 위 주소를 입력하세요.</span>
+        <a class="btn" href="https://map.naver.com/" target="_blank" rel="noopener">네이버 지도 열기</a>
+      </div>
+      <p style="color:var(--muted);font-size:.9rem">서울양양고속도로 양양 IC → 7번 국도 남쪽 방향 → 죽도해변 입구에서 좌회전. 대중교통은 양양 시외버스터미널에서 택시 20분.</p>
+    </div>
+  </section>
+
+  <section class="block" id="info">
+    <p class="eyebrow">예약 안내</p>
+    <h2>입실 15:00 · 퇴실 11:00</h2>
+    <dl class="rules">
+      <div><dt>예약 확정</dt><dd>전화 또는 네이버 예약 후 당일 입금 시 확정. 미입금 시 자동 취소됩니다.</dd></div>
+      <div><dt>환불 규정</dt><dd>이용 7일 전 100%, 3일 전 50%, 당일·노쇼 환불 불가 (예시 규정).</dd></div>
+      <div><dt>바비큐</dt><dd>21:30까지 이용 가능. 그릴 세트는 예약 시 미리 말씀해 주세요.</dd></div>
+      <div><dt>정숙 시간</dt><dd>22:00 이후 테라스 소음 자제. 다른 객실도 바다 소리를 듣고 싶어 합니다.</dd></div>
+      <div><dt>주차</dt><dd>객실당 1대 무료, 추가 차량은 사전 문의.</dd></div>
+    </dl>
+  </section>
+
+  <section class="block" id="reviews">
+    <p class="eyebrow">이용 후기</p>
+    <h2>다녀가신 분들의 말</h2>
+    <div class="reviews">
+      <div class="review">
+        <p>"새벽에 커튼 걷으니 바로 바다. 서핑 배우러 왔다가 테라스에서만 하루를 보냈어요."</p>
+        <p class="who">2026년 9월 · 파도 객실 · 예시 후기</p>
+      </div>
+      <div class="review">
+        <p>"강아지랑 같이 올 수 있는 곳이 드문데, 모래 객실은 마당이 바로 있어서 편했습니다."</p>
+        <p class="who">2026년 8월 · 모래 객실 · 예시 후기</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    바다결 펜션 (가상의 업체) · 대표 홍길동 · 사업자등록번호 000-00-00000 · 통신판매업신고 제2026-강원양양-0000호<br>
+    강원특별자치도 양양군 현남면 죽도해변길 00 · 033-000-0000<br>
+    이 페이지는 제작 예시이며 모든 업체 정보, 사진, 가격, 후기는 가상입니다.
+  </footer>
+</main>
+
+<div class="bar">
+  <button class="btn" type="button" id="copy-phone-2">전화번호 복사</button>
+  <a class="btn primary" href="https://booking.naver.com/" target="_blank" rel="noopener">예약하기</a>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+<script>
+(function () {
+  var photos = window.PHOTOS || {};
+  document.querySelectorAll('[data-photo]').forEach(function (el) {
+    var src = photos[el.getAttribute('data-photo')];
+    if (src) { el.style.backgroundImage = "url('" + src + "')"; el.classList.add('has-photo'); }
+  });
+})();
+</script>
+<script>
+(function () {
+  var toast = document.getElementById('toast');
+  var timer;
+  function show(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(timer);
+    timer = setTimeout(function () { toast.classList.remove('show'); }, 1800);
+  }
+  function copyText(text, label) {
+    function fallback() {
+      var el = document.getElementById('phone-number');
+      if (el) { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+      show(label + ' 선택했습니다. 길게 눌러 복사하세요');
+    }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { show(label + ' 복사했습니다'); }, fallback);
+      } else { fallback(); }
+    } catch (e) { fallback(); }
+  }
+  var phone = '033-000-0000';
+  var addr = '강원특별자치도 양양군 현남면 죽도해변길 00';
+  ['copy-phone', 'copy-phone-2'].forEach(function (id) {
+    var b = document.getElementById(id);
+    if (b) b.addEventListener('click', function () { copyText(phone, '전화번호'); });
+  });
+  var a = document.getElementById('copy-addr');
+  if (a) a.addEventListener('click', function () { copyText(addr, '주소'); });
+})();
+</script>
