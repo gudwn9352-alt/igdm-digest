@@ -1,0 +1,12 @@
+# 개인 데이터 / 비밀값은 커밋하지 않음
+config.yaml
+.env
+data/
+*.zip
+
+__pycache__/
+*.pyc
+.pytest_cache/
+build/
+dist/
+*.egg-info/

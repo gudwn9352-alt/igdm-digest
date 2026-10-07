@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "igdm-digest"
+version = "0.1.0"
+description = "인스타그램 DM 내보내기 파일을 읽어 유익한 정보만 골라 요약하고, 내 사업에 적용할 액션을 제안·실행하는 자동화 도구"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=1.11,<2",
+    "pyyaml>=6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+igdm = "igdm_digest.cli:main"
+
+[tool.setuptools]
+packages = ["igdm_digest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
