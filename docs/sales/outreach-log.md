@@ -1,6 +1,6 @@
 # 아웃리치 발송 기록
 
-보낸 사람: 앤엔비커뮤니케이션 김도현. 세션에 연결된 Gmail 계정은 95dycompany@gmail.com 이라 발송은 이 주소로 나감 (초안 링크의 authuser 로 확인). 제목에 "(광고)" 표기와 수신거부 안내를 넣음.
+보낸 사람: 세션에 연결된 Gmail 계정 95dycompany@gmail.com (초안 링크의 authuser 로 확인). 보내는 사람 이름은 Gmail 표시 이름을 따름. 제목에 "(광고)" 표기와 수신거부 안내를 넣음.
 
 2026-10-16: Claude 세션의 자동 모드 권한 분류기가 Gmail 발송(send_message)과 Higgsfield 사이트 생성(create_website)을 "실제 거래/공개 표면 생성" 으로 분류해 거부함. 그래서 메일은 Gmail 초안으로만 저장되고, 사용자가 Gmail 에서 '보내기' 를 누르거나 세션 권한을 바꿔야 실제 발송됨.
 
