@@ -13,6 +13,11 @@
 | 2026-10-16 | Cloverlawn B&B (아일랜드 로슬레어) | 이메일 | cloverlawn@eircom.net | 모바일 1페이지 USD 290/3일 | 초안(미발송) | http 전용 사이트, 페리 승객 타깃 |
 | 2026-10-16 | Donalea B&B & Riverview Apartment (태즈메이니아) | 이메일 | donalea@bigpond.com | 모바일 1페이지 USD 290/3일 | 초안(미발송) | 두 상품용 버튼 2개 제안 |
 | 2026-10-16 | Ardness House B&B (스코틀랜드 멀섬) | 이메일 | enquiries@isleofmullholidays.com | 모바일 1페이지 USD 290/3일 | 초안(미발송) | 50년 가족 운영, 에어비앤비 의존 |
+| 2026-10-16 | 인천섬 풀사이드펜션 | 이메일 | poolsdiepension@naver.com | 모바일 1페이지 39만원/3일 | 초안(미발송) | modoo 종료로 홈페이지 소실 추정. 이메일 철자 특이 |
+| 2026-10-16 | 경주 화랑루 | 이메일 | sdn0843@naver.com | 1페이지 39만원 / 5페이지 79만원 | 초안(미발송) | 신축 한옥 7실, 관광DB 홈페이지가 modoo |
+| 2026-10-16 | 제천솔레이크펜션 | 이메일 | solelake@naver.com | 모바일 1페이지 39만원/3일 | 초안(미발송) | modoo 소실 + 구형 예약왕 페이지 |
+| 2026-10-16 | 남양주 히든펜션 | 이메일 | hiddenpension@naver.com | 모바일 1페이지 39만원/3일 | 초안 생성 거부됨 | 권한 분류기가 초안 생성까지 거부(사유 없음). 본문은 drafts/hidden-pension.md |
+| 2026-10-16 | 경주 라연재 | 이메일 | rayeonjae@naver.com | 1페이지 39만원 + 영상 3편 25만원 | 초안(미발송) | 네이버 플레이스만 운영 |
 
 ## Gmail 초안 링크 (2026-10-16)
 - 개울가펜션: https://mail.google.com/mail/?authuser=95dycompany@gmail.com#all?compose=thread-f:1879183924732135880%2Bmsg-a:r9154393195378526437
@@ -25,8 +30,14 @@
 - Donalea: https://mail.google.com/mail/?authuser=95dycompany@gmail.com#all?compose=thread-f:1879184235243305310%2Bmsg-a:r1208573080961089396
 - Ardness House: https://mail.google.com/mail/?authuser=95dycompany@gmail.com#all?compose=thread-f:1879184236029410706%2Bmsg-a:r-168113175019000887
 
+## Gmail 국내 초안 링크 (2026-10-16, 2차)
+- 풀사이드펜션: https://mail.google.com/mail/?authuser=95dycompany@gmail.com#all?compose=thread-f:1879184361600108400%2Bmsg-a:r-340928900295601492
+- 화랑루: https://mail.google.com/mail/?authuser=95dycompany@gmail.com#all?compose=thread-f:1879184362060572506%2Bmsg-a:r2229978620827648853
+- 제천솔레이크펜션: https://mail.google.com/mail/?authuser=95dycompany@gmail.com#all?compose=thread-f:1879184362736334118%2Bmsg-a:r-3490181126050487220
+- 라연재: https://mail.google.com/mail/?authuser=95dycompany@gmail.com#all?compose=thread-f:1879184364890809223%2Bmsg-a:r-7971624342978254742
+
 ## 다음 발송 대기
-- 조사 에이전트가 찾는 "이메일 공개" 국내·해외 업체 (결과 도착 시 추가)
+- 국내 `leads-email-kr-2026-10-16.md` 6~32번, 해외 `leads-overseas-2026-10-16.md` 6~15번 (초안 형식 동일)
 
 ## 회신 처리 원칙
 - "예시 보여주세요" 회신 → 예시 페이지 링크(공개 설정 필요) 또는 PDF 와 구성안 발송
