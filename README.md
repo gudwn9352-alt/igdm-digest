@@ -152,6 +152,19 @@ igdm run --captured captured.json
 
 주의: 브라우저 자동화로 본인 계정을 읽는 것도 Meta 약관상 "자동화된 접근" 에 해당할 수 있습니다. 공식 내보내기가 가장 안전합니다.
 
+## 릴스 키워드 검색 (Apify, 선택)
+
+DM 과 별개로, 키워드로 인스타그램 릴스를 찾아 재생수·좋아요·캡션 등을 받습니다. Apify 의 `data-slayer/instagram-search-reels` Actor 를 호출하며, 인스타그램 로그인은 필요 없습니다(Apify 서버에서 실행).
+
+```bash
+export APIFY_TOKEN=...            # Apify 콘솔 → Settings → API & Integrations
+igdm reels "펜션 마케팅" --pages 1 --max-charge 0.5
+```
+
+- 결과 전체는 `data/reels/reels-<검색어>-<시각>.json` 에 저장되고, 화면에는 상위 몇 건만 요약합니다.
+- 비용(2026-11-24 Apify API 기준): 실행당 $0.002 + 결과 1건당 $0.0025(무료 플랜). Apify 무료 플랜은 월 $5 크레딧. `--max-charge` 로 1회 상한을 둡니다.
+- 비공식 스크래퍼(제3자 Actor)라 인스타그램 쪽 변경으로 언제든 동작이 멈추거나 결과 필드가 바뀔 수 있습니다.
+
 ## 리포트 예시 구조
 
 ```

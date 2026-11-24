@@ -151,6 +151,22 @@ def cmd_leads(args, cfg) -> int:
     return 0
 
 
+def cmd_reels(args, cfg) -> int:
+    from .reels import ReelsError, save_results, search_reels, summarize
+
+    try:
+        items = search_reels(args.query, max_pages=args.pages, max_charge_usd=args.max_charge)
+    except ReelsError as e:
+        _print(f"오류: {e}")
+        return 1
+    path = save_results(items, data_dir(cfg) / "reels", args.query)
+    _print(f"'{args.query}' 릴스 {len(items)}건")
+    for s in map(summarize, items[: args.show]):
+        _print(f"- 재생 {s['plays']} · 좋아요 {s['likes']} · @{s['user']} {s['url']}\n  {(s['caption'] or '').replace(chr(10), ' ')[:100]}")
+    _print(f"\n전체 결과 저장: {path}")
+    return 0
+
+
 def cmd_report(args, cfg) -> int:
     run = load_last_run(cfg)
     if not run:
@@ -219,7 +235,14 @@ def build_parser() -> argparse.ArgumentParser:
     ld.add_argument("--count", type=int, default=10)
     ld.set_defaults(func=cmd_leads)
 
-    rp = sub.add_parser("report", help="마지막 실행 리포트 다시 보기/재전송")
+    rl = sub.add_parser("reels", help="Apify 로 키워드 릴스 검색 (APIFY_TOKEN 필요, 유료)")
+    rl.add_argument("query", help="검색어, 예: '펜션 마케팅'")
+    rl.add_argument("--pages", type=int, default=1, help="가져올 페이지 수 (1~100, 기본 1)")
+    rl.add_argument("--max-charge", type=float, default=0.5, help="이번 실행 최대 비용 USD (기본 0.5)")
+    rl.add_argument("--show", type=int, default=10, help="화면에 보여줄 개수")
+    rl.set_defaults(func=cmd_reels)
+
+    rp = sub.add_parser("report",help="마지막 실행 리포트 다시 보기/재전송")
     rp.add_argument("--deliver", action="store_true")
     rp.set_defaults(func=cmd_report)
 
