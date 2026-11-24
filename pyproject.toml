@@ -15,6 +15,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
+source = ["scenedetect[opencv-headless]>=0.6", "rapidocr>=3", "onnxruntime"]
 
 [project.scripts]
 igdm = "igdm_digest.cli:main"
