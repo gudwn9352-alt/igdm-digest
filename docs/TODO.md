@@ -36,3 +36,12 @@
 - [x] 저장소 생성 확인 후 `igdm-digest` 푸시
 - [ ] 개울가펜션·해뜨는 집 등 이메일 공개 업체용 제안 메일 초안 (요청 시)
 - [ ] 첫 실행 오류 수정
+
+## 연출 수집 + AI 리메이크 (2026-11-24, 자세한 내용: docs/handoff-2026-11-24-연출수집-리메이크.md)
+
+- [ ] 디자인 변경(인물+배경·소품) 리메이크 테스트 1회: Higgsfield kling-image/v4.0/edit 키프레임 → kling-video/v4.0-flash/reference-to-video, 자막 0건 검증
+- [ ] 보충 검색 결과(절약 브이로그·돈 모으기·적금·가계부 쓰기·부부 재테크·장보러 가는 부부) 판별 → 장보기·재테크 10개 채우기
+- [ ] 장보기 오분류 2건(DdGyw1GzEW2, DQnVFIeE7DX) 재검토
+- [ ] 58개 전체 리메이크 여부·예산 사용자 확인
+- [ ] claude/source-collect-remake 브랜치 main 병합
+- [ ] 로컬 PC ~/.claude/CLAUDE.md 에 "정확성·검증 우선 응답 원칙" 설치

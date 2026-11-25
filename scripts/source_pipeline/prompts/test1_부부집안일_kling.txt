@@ -1,0 +1,15 @@
+[Asset Roles]
+@Video1 is the reference for camera position, framing, body motion, actions and shot pacing only. Follow its three shots, their lengths and cut timing. Do not copy the people's faces, hairstyles or clothing from @Video1.
+
+[Overall Settings]
+Vertical 9:16 live-action smartphone footage of a Korean married couple doing housework together in their bright, tidy apartment. Natural, candid, realistic. The couple is different from the reference: the wife is late 20s with long dark hair in a low ponytail, wearing a cream knit top and light grey jogger pants; the husband is late 20s with short black hair, wearing a navy crew-neck T-shirt and black shorts. Soft natural daylight, warm neutral tones. Clean picture with no on-screen graphics.
+
+[Sequence of Events]
+Shot 1 (0-4.4s): Fixed camera at the foot of the bed. The couple stands on either side of a white bed and puts a grey checked duvet cover on together; the wife lifts the duvet high and shakes it while the husband holds the corners, then they spread it flat.
+Shot 2 (4.4-7.6s): Fixed wide shot of the living room. The husband sits on a dark sofa lifting his legs while the wife vacuums the floor under his feet with a cordless stick vacuum, then she pauses and wipes her forehead.
+Shot 3 (7.6-11s): Medium shot in the kitchen. The wife, wearing yellow rubber gloves, washes dishes at the sink while the husband stands beside her folding a pillow cover and chatting.
+
+[Audio]
+Quiet home ambience, soft vacuum and running-water sounds. No music, no speech.
+
+No subtitles, no captions, no text overlays, no watermark.

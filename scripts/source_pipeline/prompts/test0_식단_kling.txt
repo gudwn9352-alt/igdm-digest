@@ -1,0 +1,21 @@
+[Asset Roles]
+@Video1 is the reference for camera movements, framing, body motion and shot pacing only. Follow its shot count, shot lengths and cutting rhythm. Do not copy the person's appearance or clothing from @Video1.
+
+[Overall Settings]
+Vertical 9:16 live-action smartphone footage, realistic and natural. A bright modern Korean apartment kitchen with a tall stainless-steel refrigerator. On the fridge door hangs a magnetic whiteboard weekly meal planner with handwritten notes and colorful sticky notes below it. The subject is a different woman: Korean, early 30s, shoulder-length straight brown hair worn down, light blue linen button-up shirt with sleeves rolled up, beige pants. Soft natural daylight, cool clean tones. Clean picture with no on-screen graphics.
+
+[Sequence of Events]
+Shot 1 (0-1.3s): Handheld view of the open refrigerator interior, neatly organized clear storage containers, bottles in the door shelf, cool white fridge light, slight camera drift.
+Shot 2 (1.3-1.8s): Medium shot from behind: the woman stands at the fridge door and writes on the whiteboard meal planner with a black marker, right arm raised.
+Shot 3 (1.8-2.3s): Closer shot from behind her head and shoulder as she keeps writing on the planner.
+Shot 4 (2.3-2.8s): Wider shot from behind: the fridge door is open and she reaches up to the top shelf.
+Shot 5 (2.8-3.7s): Two quick close-ups of her hand writing on the planner with the marker.
+Shot 6 (3.7-5.6s): Close shots from just behind her head as she writes in the top rows of the planner, small handheld movement.
+Shot 7 (5.6-6.3s): Static wide shot: she stands at the fridge looking at the planner.
+Shot 8 (6.3-7.3s): Close shot of the filled planner as she steps in front of it.
+Shot 9 (7.3-8.3s): Static close-up of the completed weekly meal planner on the fridge door, no person.
+
+[Audio]
+Quiet kitchen ambience and the soft squeak of a marker on the whiteboard. No music, no speech.
+
+No subtitles, no captions, no text overlays, no watermark.

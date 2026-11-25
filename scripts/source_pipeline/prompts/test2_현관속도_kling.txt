@@ -1,0 +1,15 @@
+[Asset Roles]
+@Video1 is the reference for camera position, framing, body motion, walking speed and timing only. Follow its single continuous fixed shot. Do not copy the people's faces, hairstyles or clothing from @Video1.
+
+[Overall Settings]
+Vertical 9:16 live-action smartphone footage from a fixed camera at the end of a bright apartment entrance hallway with a dark front door at the back. A Korean married couple in their 30s. The wife has long wavy brown hair and wears a mustard yellow cardigan over a white T-shirt and wide denim jeans. The husband has a short buzz cut and wears a light blue shirt and beige chino pants. Realistic, natural light from the ceiling lamp. Clean picture with no on-screen graphics.
+
+[Sequence of Events]
+0-4s: The front door opens; the wife walks in quickly and briskly toward the camera, swinging her arms, while the husband slowly steps in through the door behind her.
+4-6s: The wife hurries past the camera and out of frame on the right; the husband stands still in the hallway, looking around slowly.
+6-10s: The husband stays standing almost motionless near the door. The wife, now changed into a grey home outfit, rushes back into frame from the right holding a cordless stick vacuum and starts vacuuming quickly near the camera.
+
+[Audio]
+Quiet hallway ambience, footsteps, the door closing, then a vacuum cleaner. No music, no speech.
+
+No subtitles, no captions, no text overlays, no watermark.
